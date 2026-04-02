@@ -1,6 +1,16 @@
 # CleanPasteGuard 🛡️
 
+<!-- Plugin description -->
 **CleanPasteGuard** 是一个为开发者设计的轻量级 PyCharm/IntelliJ 插件，旨在彻底解决从 WPS、Word 或网页复制代码时带入的“隐形垃圾字符”问题。
+
+### ⌨️ 如何使用
+
+1. **打开**从wps粘贴过来存在异常空格的代码。
+2. 按下快捷键：`Ctrl + Alt + Shift + S` (可在 Keymap 中搜索Clean Code Junk自定义)。
+3. **完成！** 所有的报错字符将瞬间变回标准的编程字符。
+
+本插件开源，欢迎贡献代码。https://github.com/uaholic/CleanPasteGuard
+<!-- Plugin description end -->
 
 ---
 
@@ -32,7 +42,7 @@
 
 ## ⌨️ 如何使用
 
-1. **选中**你需要清洗的代码块（或者不选中，默认清洗全文件）。
+1. **打开**从wps粘贴过来存在异常空格的代码。
 2. 按下快捷键：`Ctrl + Alt + Shift + S` (可在 Keymap 中自定义)。
 3. **完成！** 所有的报错字符将瞬间变回标准的编程字符。
 
