@@ -1,7 +1,31 @@
+# --- JetBrains IDE ---
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# --- Gradle ---
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties
+
+# --- OS Specific ---
 .DS_Store
-.gradle
-.idea
-.intellijPlatform
-.kotlin
-.qodana
-build
+Thumbs.db
+
+# --- IntelliJ Plugin Specific ---
+# 这是一个隐藏文件夹，存放下载的 IntelliJ SDK 副本，非常大，绝对不要提交
+.intellijPlatform/
+
+# 运行 runIde 时生成的本地沙盒环境（包含测试用的配置、插件和日志）
+build/idea-sandbox/
+
+# --- Java/Kotlin ---
+*.class
+*.log
+
+# --- Local Configuration ---
+# 如果你在 local.properties 里写了本地 JDK 路径，不要提交它
+local.properties

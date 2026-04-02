@@ -2,14 +2,23 @@
 <idea-plugin>
     <id>com.github.uaholic.cleanpasteguard</id>
     <name>CleanPasteGuard</name>
-    <vendor>uaholic</vendor>
+    <vendor email="admin@guanyanqi.com" url="https://github.com/uaholic/CleanPasteGuard">uaholic</vendor>
 
     <depends>com.intellij.modules.platform</depends>
 
     <resource-bundle>messages.MyBundle</resource-bundle>
 
-    <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.uaholic.cleanpasteguard.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
-        <postStartupActivity implementation="com.github.uaholic.cleanpasteguard.startup.MyProjectActivity" />
-    </extensions>
+    <actions>
+        <action id="CleanDirtyChars"
+                class="com.github.uaholic.cleanpasteguard.CleanAction"
+                text="Clean Code Junk"
+                description="Remove NBSP and Chinese symbols">
+
+            <add-to-group group-id="EditMenu" anchor="last"/>
+
+            <keyboard-shortcut keymap="$default" first-keystroke="control alt shift S"/>
+            <keyboard-shortcut keymap="Mac OS X" first-keystroke="meta shift S"/>
+        </action>
+    </actions>
+
 </idea-plugin>

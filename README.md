@@ -1,52 +1,51 @@
-# CleanPasteGuard
+# CleanPasteGuard 🛡️
 
-![Build](https://github.com/uaholic/CleanPasteGuard/workflows/Build/badge.svg)
-[![Version](https://img.shields.io/jetbrains/plugin/v/MARKETPLACE_ID.svg)](https://plugins.jetbrains.com/plugin/MARKETPLACE_ID)
-[![Downloads](https://img.shields.io/jetbrains/plugin/d/MARKETPLACE_ID.svg)](https://plugins.jetbrains.com/plugin/MARKETPLACE_ID)
-
-## Template ToDo list
-- [x] Create a new [IntelliJ Platform Plugin Template][template] project.
-- [ ] Get familiar with the [template documentation][template].
-- [ ] Adjust the [pluginGroup](./gradle.properties) and [pluginName](./gradle.properties), as well as the [id](./src/main/resources/META-INF/plugin.xml) and [sources package](./src/main/kotlin).
-- [ ] Adjust the plugin description in `README` (see [Tips][docs:plugin-description])
-- [ ] Review the [Legal Agreements](https://plugins.jetbrains.com/docs/marketplace/legal-agreements.html?from=IJPluginTemplate).
-- [ ] [Publish a plugin manually](https://plugins.jetbrains.com/docs/intellij/publishing-plugin.html?from=IJPluginTemplate) for the first time.
-- [ ] Set the `MARKETPLACE_ID` in the above README badges. You can obtain it once the plugin is published to JetBrains Marketplace.
-- [ ] Set the [Plugin Signing](https://plugins.jetbrains.com/docs/intellij/plugin-signing.html?from=IJPluginTemplate) related [secrets](https://github.com/JetBrains/intellij-platform-plugin-template#environment-variables).
-- [ ] Set the [Deployment Token](https://plugins.jetbrains.com/docs/marketplace/plugin-upload.html?from=IJPluginTemplate).
-- [ ] Click the <kbd>Watch</kbd> button on the top of the [IntelliJ Platform Plugin Template][template] to be notified about releases containing new features and fixes.
-- [ ] Configure the [CODECOV_TOKEN](https://docs.codecov.com/docs/quick-start) secret for automated test coverage reports on PRs
-
-<!-- Plugin description -->
-This Fancy IntelliJ Platform Plugin is going to be your implementation of the brilliant ideas that you have.
-
-This specific section is a source for the [plugin.xml](/src/main/resources/META-INF/plugin.xml) file which will be extracted by the [Gradle](/build.gradle.kts) during the build process.
-
-To keep everything working, do not remove `<!-- ... -->` sections. 
-<!-- Plugin description end -->
-
-## Installation
-
-- Using the IDE built-in plugin system:
-
-  <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>Marketplace</kbd> > <kbd>Search for "CleanPasteGuard"</kbd> >
-  <kbd>Install</kbd>
-
-- Using JetBrains Marketplace:
-
-  Go to [JetBrains Marketplace](https://plugins.jetbrains.com/plugin/MARKETPLACE_ID) and install it by clicking the <kbd>Install to ...</kbd> button in case your IDE is running.
-
-  You can also download the [latest release](https://plugins.jetbrains.com/plugin/MARKETPLACE_ID/versions) from JetBrains Marketplace and install it manually using
-  <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>⚙️</kbd> > <kbd>Install plugin from disk...</kbd>
-
-- Manually:
-
-  Download the [latest release](https://github.com/uaholic/CleanPasteGuard/releases/latest) and install it manually using
-  <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>⚙️</kbd> > <kbd>Install plugin from disk...</kbd>
-
+**CleanPasteGuard** 是一个为开发者设计的轻量级 PyCharm/IntelliJ 插件，旨在彻底解决从 WPS、Word 或网页复制代码时带入的“隐形垃圾字符”问题。
 
 ---
-Plugin based on the [IntelliJ Platform Plugin Template][template].
 
-[template]: https://github.com/JetBrains/intellij-platform-plugin-template
-[docs:plugin-description]: https://plugins.jetbrains.com/docs/intellij/plugin-user-experience.html#plugin-description-and-presentation
+## 🌟 解决的痛点
+
+你是否遇到过：从文档粘贴代码到编辑器，明明看起来没问题，运行却报错 `SyntaxError: invalid non-printable character U+00A0`？
+
+这是因为这些软件会在空格处插入 **NBSP (Non-breaking space)**。本插件可以一键清除它们！
+
+### 核心功能：
+- ✅ **自动替换 NBSP (\u00A0)** 为标准空格。
+- ✅ **转换全角空格 (\u3000)** 为标准空格。
+- ✅ **修正中文标点**：自动将中文字符中的 `“ ”` `；` 替换为英文代码通用的 ` " " ` `;`。
+- ✅ **智能识别**：支持全选清洗，或仅针对选中的代码段进行清洗。
+
+---
+
+## 🚀 安装方法
+
+由于插件尚未发布到 Marketplace，目前请使用本地安装：
+
+1. 在本仓库的 [Releases](./releases) 页面下载最新的 `.zip` 压缩包。
+2. 打开你的 IDE (PyCharm/IDEA/WebStorm)。
+3. 进入 `Settings` -> `Plugins`。
+4. 点击顶部的 ⚙️ (齿轮图标)，选择 **"Install Plugin from Disk..."**。
+5. 选中下载的 `.zip` 文件并重启 IDE。
+
+---
+
+## ⌨️ 如何使用
+
+1. **选中**你需要清洗的代码块（或者不选中，默认清洗全文件）。
+2. 按下快捷键：`Ctrl + Alt + Shift + S` (可在 Keymap 中自定义)。
+3. **完成！** 所有的报错字符将瞬间变回标准的编程字符。
+
+---
+
+## 🛠️ 技术路线
+
+- 语言：Java
+- 平台：IntelliJ Platform Plugin SDK
+- 开源协议：MIT
+
+---
+
+## 🤝 贡献与反馈
+
+如果你发现了其他令人头疼的字符，欢迎提交 [Issue](./issues) 或 Pull Request！
