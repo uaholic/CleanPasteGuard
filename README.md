@@ -33,10 +33,10 @@
 由于插件尚未发布到 Marketplace，目前请使用本地安装：
 
 1. 在本仓库的 [Releases](./releases) 页面下载最新的 `.zip` 压缩包。
-2. 打开你的 IDE (PyCharm/IDEA/WebStorm)。
-3. 进入 `Settings` -> `Plugins`。
+2. 不要解压缩下载的zip包，打开你的 IDE (PyCharm/IDEA/WebStorm)。
+3. 快捷键 ctrl + alt + s 进入 `Settings` -> `Plugins`。
 4. 点击顶部的 ⚙️ (齿轮图标)，选择 **"Install Plugin from Disk..."**。
-5. 选中下载的 `.zip` 文件并重启 IDE。
+5. 选中下载的 `.zip` 文件安装成功后点开CleanPasteGuard apply并重启 IDE。
 
 ---
 
